@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 from struct import unpack
 
-from properties import DATA_TYPE_MAP
+from .properties import DATA_TYPE_MAP
 
 
 class DataModel(object):
