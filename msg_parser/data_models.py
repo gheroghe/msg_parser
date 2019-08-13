@@ -88,7 +88,7 @@ class DataModel(object):
     @staticmethod
     def PtypString(data_value):
         if data_value:
-            data_value = data_value.decode("utf-16-le", errors="ignore").replace(b'\x00', b'')
+            data_value = data_value.decode("utf-16-le", errors="ignore").replace('\x00', '')
         return data_value
 
     @staticmethod
