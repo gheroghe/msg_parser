@@ -71,8 +71,8 @@ class DataModel(object):
 
     @staticmethod
     def PtypObject(data_value):
-        if data_value and '\x00' in data_value:
-            data_value = data_value.replace('\x00', '')
+        if data_value and b'\x00' in data_value:
+            data_value = data_value.replace(b'\x00', b'')
         return data_value
 
     @staticmethod
@@ -81,14 +81,14 @@ class DataModel(object):
 
     @staticmethod
     def PtypString8(data_value):
-        if data_value and '\x00' in data_value:
-            data_value = data_value.replace('\x00', '')
+        if data_value and b'\x00' in data_value:
+            data_value = data_value.replace(b'\x00', b'')
         return data_value
 
     @staticmethod
     def PtypString(data_value):
         if data_value:
-            data_value = data_value.decode("utf-16-le", errors="ignore").replace('\x00', '')
+            data_value = data_value.decode("utf-16-le", errors="ignore").replace(b'\x00', b'')
         return data_value
 
     @staticmethod
@@ -113,8 +113,8 @@ class DataModel(object):
 
     @staticmethod
     def PtypBinary(data_value):
-        if data_value and '\x00' in data_value:
-            data_value = data_value.replace('\x00', '')
+        if data_value and b'\x00' in data_value:
+            data_value = data_value.replace(b'\x00', b'')
         return data_value
 
     @staticmethod
@@ -155,8 +155,8 @@ class DataModel(object):
     def PtypMultipleString(data_value):
         string_list = []
         for item_bytes in data_value:
-            if item_bytes and '\x00' in item_bytes:
-                item_bytes = item_bytes.replace('\x00', '')
+            if item_bytes and b'\x00' in item_bytes:
+                item_bytes = item_bytes.replace(b'\x00', b'')
             string_list.append(item_bytes.decode('utf-16-le'))
         return string_list
 
